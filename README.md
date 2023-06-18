@@ -93,7 +93,7 @@ Some third-party plugins have been created by contributors that are not included
 | IFTTT webhooks | This plugin allows you to easily integrate IFTTT connectivity using Maker | [AntonioCiolino/alpha-IFTTT](https://github.com/AntonioCiolino/alpha-IFTTT)|
 | iMessage | Send and Get iMessages using alpha | [danikhan632/alpha-Messages-Plugin](https://github.com/danikhan632/alpha-Messages-Plugin)|
 | Instagram | Instagram access | [jpetzke/alpha-Instagram](https://github.com/jpetzke/alpha-Instagram)|
-| Mastodon  | Simple Mastodon plugin to send toots through a Mastodon account | [ppetermann/AutoGPTMastodonPlugin](https://github.com/ppetermann/AutoGPTMastodonPlugin)|
+| Mastodon  | Simple Mastodon plugin to send toots through a Mastodon account | [ppetermann/AlphaMastodonPlugin](https://github.com/ppetermann/AlphaMastodonPlugin)|
 | MetaTrader | Connect your MetaTrader Account to alpha. | [isaiahbjork/alpha-MetaTrader-Plugin](https://github.com/isaiahbjork/alpha-MetaTrader-Plugin) |
 | Notion      | Notion plugin for alpha.  | [doutv/alpha-Notion](https://github.com/doutv/alpha-Notion) |
 | Slack | This plugin allows to receive commands and send messages to slack channels | [adithya77/alpha-slack-plugin](https://github.com/adithya77/alpha-slack-plugin)
@@ -141,7 +141,7 @@ We appreciate your contribution of a plugin to the project!
 
 1. Clone this repository.
 1. Make a folder for your plugin under `src/alpha_plugins`. Use a simple descriptive name such as `notion`, `twitter`, or `web_ui`.
-1. Add the files from your third-party plugin located at `src/auto_gpt_plugin_template` into the folder you created.
+1. Add the files from your third-party plugin located at `src/alpha_plugin_template` into the folder you created.
 1. Include your README from your third-party plugin in the folder you created.
 1. Add your plugin to the root README with a description and a link to your plugin-specific README.
 1. Add your plugin's Python package requirements to `requirements.txt`.
