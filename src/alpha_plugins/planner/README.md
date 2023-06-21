@@ -1,4 +1,4 @@
-# alpha Planner Plugin
+# Alpha Planner Plugin
 Simple planning commands for planning leveraged with chatgpt3.5 and json objects to keep track of its progress on a list of tasks.
 
 ![image](https://user-images.githubusercontent.com/12145726/235688701-af549b76-7f9f-4426-9c88-dd72aca45685.png)
