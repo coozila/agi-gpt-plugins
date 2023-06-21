@@ -1,58 +1,55 @@
-import json
 import os
+import json
+from dotenv import load_dotenv
 
 
 def check_plan():
-    """this function checks if the file plan.md exists, if it doesn't exist it gets created"""
-
     current_working_directory = os.getcwd()
-    workdir = os.path.join(
-        current_working_directory, "alpha", "alpha_workspace", "plan.md"
-    )
-
+    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "plan.json")
     file_name = workdir
 
     if not os.path.exists(file_name):
+        plan = {
+            "tasks": [
+                {
+                    "description": "Create a detailed checklist for the current plan and goals",
+                    "completed": False
+                },
+                {
+                    "description": "Review that every new task is completed",
+                    "completed": False
+                }
+            ],
+            "notes": [
+                "Use the run_planning_cycle command frequently to keep this plan up to date."
+            ]
+        }
         with open(file_name, "w") as file:
-            file.write(
-                """
-                # Task List and status:
-                - [ ] Create a detailed checklist for the current plan and goals
-                - [ ] Finally, review that every new task is completed
-                
-                ## Notes:
-                - Use the run_planning_cycle command frequently to keep this plan up to date.
-                        """
-            )
+            json.dump(plan, file, indent=4)
         print(f"{file_name} created.")
 
     with open(file_name, "r") as file:
-        return file.read()
+        return json.load(file)
 
 
 def update_plan():
-    """this function checks if the file plan.md exists, if it doesn't exist it gets created"""
-
     current_working_directory = os.getcwd()
-    workdir = os.path.join(current_working_directory, 'alpha', 'alpha_workspace', 'plan.md')
-
+    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "plan.json")
     file_name = workdir
 
-    with open(file_name, 'r') as file:
-        data = file.read()
+    with open(file_name, "r") as file:
+        data = json.load(file)
 
     response = generate_improved_plan(data)
 
     with open(file_name, "w") as file:
-        file.write(response)
+        json.dump(response, file, indent=4)
     print(f"{file_name} updated.")
 
     return response
 
 
-def generate_improved_plan(prompt: str) -> str:
-    """Generate an improved plan using OpenAI's ChatCompletion functionality"""
-
+def generate_improved_plan(plan: dict) -> dict:
     import openai
 
     tasks = load_tasks()
@@ -67,24 +64,21 @@ def generate_improved_plan(prompt: str) -> str:
         messages=[
             {
                 "role": "system",
-                "content": "You are an assistant that improves and adds crucial points to plans in .md format.",
+                "content": "You are an assistant that improves and adds crucial points to plans in JSON format."
             },
             {
                 "role": "user",
-                "content": f"Update the following plan given the task status below, keep the .md format:\n{prompt}\n"
-                           f"Include the current tasks in the improved plan, keep mind of their status and track them "
-                           f"with a checklist:\n{tasks}\n Revised version should comply with the contents of the "
-                           f"tasks at hand:",
-            },
+                "content": json.dumps(plan)
+            }
         ],
         max_tokens=int(max_tokens),
         n=1,
-        temperature=float(temperature),
+        temperature=float(temperature)
     )
 
     # Extract the improved plan from the response
     improved_plan = response.choices[0].message.content.strip()
-    return improved_plan
+    return json.loads(improved_plan)
 
 
 def create_task(task_id=None, task_description: str = None, status=False):
@@ -93,22 +87,18 @@ def create_task(task_id=None, task_description: str = None, status=False):
     tasks[str(task_id)] = task
 
     current_working_directory = os.getcwd()
-    workdir = os.path.join(
-        current_working_directory, "alpha", "alpha_workspace", "tasks.json"
-    )
+    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "tasks.json")
     file_name = workdir
 
     with open(file_name, "w") as f:
-        json.dump(tasks, f)
+        json.dump(tasks, f, indent=4)
 
     return tasks
 
 
 def load_tasks() -> dict:
     current_working_directory = os.getcwd()
-    workdir = os.path.join(
-        current_working_directory, "alpha", "alpha_workspace", "tasks.json"
-    )
+    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "tasks.json")
     file_name = workdir
 
     if not os.path.exists(file_name):
@@ -136,12 +126,15 @@ def update_task_status(task_id):
     tasks[str(task_id)]["completed"] = True
 
     current_working_directory = os.getcwd()
-    workdir = os.path.join(
-        current_working_directory, "alpha", "alpha_workspace", "tasks.json"
-    )
+    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "tasks.json")
     file_name = workdir
 
     with open(file_name, "w") as f:
-        json.dump(tasks, f)
+        json.dump(tasks, f, indent=4)
 
     return f"Task with ID {task_id} has been marked as completed."
+
+
+if __name__ == "__main__":
+    load_dotenv()
+    # Your code here

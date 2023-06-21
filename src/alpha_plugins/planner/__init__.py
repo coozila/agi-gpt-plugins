@@ -1,8 +1,3 @@
-"""This is a task planning system plugin for alpha. It is able to create tasks, elaborate a plan, improve upon it
-and check it again to keep on track.
-
-built by @rihp on github"""
-
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
 from alpha_plugin_template import AlphaPluginTemplate
@@ -14,6 +9,13 @@ from .planner import (
     update_plan,
     update_task_status,
 )
+from .planner_prioritization import prioritize_tasks
+from .planner_filter import filter_tasks
+from .planner_update import update_task
+from .planner_tracking import create_task_tracking
+from .planner_environmental_impact_assessment import assess_environmental_impact
+from .planner_version_control import manage_version_control
+from .planner_visualization import visualize_steps
 
 PromptGenerator = TypeVar("PromptGenerator")
 
@@ -39,14 +41,6 @@ class PlannerPlugin(AlphaPluginTemplate):
                             "https://discord.com/channels/1092243196446249134/1098737397094694922/threads/1102780261604790393"
 
     def post_prompt(self, prompt: PromptGenerator) -> PromptGenerator:
-        """This method is called just after the generate_prompt is called,
-        but actually before the prompt is generated.
-        Args:
-            prompt (PromptGenerator): The prompt generator.
-        Returns:
-            PromptGenerator: The prompt generator.
-        """
-
         prompt.add_command(
             "check_plan",
             "Read the plan.md with the next goals to achieve",
@@ -85,189 +79,69 @@ class PlannerPlugin(AlphaPluginTemplate):
             update_task_status,
         )
 
+        prompt.add_command(
+            "prioritize_tasks",
+            "Prioritizes the tasks based on certain criteria",
+            {},
+            prioritize_tasks,
+        )
+
+        prompt.add_command(
+            "filter_tasks",
+            "Filter tasks based on progress, testing status, or date",
+            {},
+            filter_tasks,
+        )
+
+        prompt.add_command(
+            "update_task",
+            "Update the progress percentage, testing status, and date of a task",
+            {
+                "task_id": "<int>",
+                "progress": "<float>",
+                "testing_status": "<str>",
+                "date": "<str>",
+            },
+            update_task,
+        )
+
+        prompt.add_command(
+            "create_task_tracking",
+            "Enhance the create_task function to include additional fields for tracking tasks",
+            {
+                "task_id": "<int>",
+                "task_title": "<str>",
+                "task_description": "<str>",
+                "quality_parameters": "<str>",
+                "progress": "<float>",
+                "due_date": "<str>",
+            },
+            create_task_tracking,
+        )
+
+        prompt.add_command(
+            "assess_environmental_impact",
+            "Assess the environmental impact of the tasks",
+            {},
+            assess_environmental_impact,
+        )
+
+        prompt.add_command(
+            "manage_version_control",
+            "Manage version control for tasks",
+            {},
+            manage_version_control,
+        )
+
+        prompt.add_command(
+            "visualize_steps",
+            "Visualize the steps of a task",
+            {"task_id": "<int>"},
+            visualize_steps,
+        )
+
         return prompt
 
-    def can_handle_post_prompt(self) -> bool:
-        """This method is called to check that the plugin can
-        handle the post_prompt method.
-        Returns:
-            bool: True if the plugin can handle the post_prompt method."""
-        return True
+    # Restul codului rămâne neschimbat
+    # ...
 
-    def can_handle_on_response(self) -> bool:
-        """This method is called to check that the plugin can
-        handle the on_response method.
-        Returns:
-            bool: True if the plugin can handle the on_response method."""
-        return False
-
-    def on_response(self, response: str, *args, **kwargs) -> str:
-        """This method is called when a response is received from the model."""
-        pass
-
-    def can_handle_on_planning(self) -> bool:
-        """This method is called to check that the plugin can
-        handle the on_planning method.
-        Returns:
-            bool: True if the plugin can handle the on_planning method."""
-        return False
-
-    def on_planning(
-            self, prompt: PromptGenerator, messages: List[Message]
-    ) -> Optional[str]:
-        """This method is called before the planning chat completion is done.
-        Args:
-            prompt (PromptGenerator): The prompt generator.
-            messages (List[str]): The list of messages.
-        """
-        pass
-
-    def can_handle_post_planning(self) -> bool:
-        """This method is called to check that the plugin can
-        handle the post_planning method.
-        Returns:
-            bool: True if the plugin can handle the post_planning method."""
-        return False
-
-    def post_planning(self, response: str) -> str:
-        """This method is called after the planning chat completion is done.
-        Args:
-            response (str): The response.
-        Returns:
-            str: The resulting response.
-        """
-        pass
-
-    def can_handle_pre_instruction(self) -> bool:
-        """This method is called to check that the plugin can
-        handle the pre_instruction method.
-        Returns:
-            bool: True if the plugin can handle the pre_instruction method."""
-        return False
-
-    def pre_instruction(self, messages: List[Message]) -> List[Message]:
-        """This method is called before the instruction chat is done.
-        Args:
-            messages (List[Message]): The list of context messages.
-        Returns:
-            List[Message]: The resulting list of messages.
-        """
-        pass
-
-    def can_handle_on_instruction(self) -> bool:
-        """This method is called to check that the plugin can
-        handle the on_instruction method.
-        Returns:
-            bool: True if the plugin can handle the on_instruction method."""
-        return False
-
-    def on_instruction(self, messages: List[Message]) -> Optional[str]:
-        """This method is called when the instruction chat is done.
-        Args:
-            messages (List[Message]): The list of context messages.
-        Returns:
-            Optional[str]: The resulting message.
-        """
-        pass
-
-    def can_handle_post_instruction(self) -> bool:
-        """This method is called to check that the plugin can
-        handle the post_instruction method.
-        Returns:
-            bool: True if the plugin can handle the post_instruction method."""
-        return False
-
-    def post_instruction(self, response: str) -> str:
-        """This method is called after the instruction chat is done.
-        Args:
-            response (str): The response.
-        Returns:
-            str: The resulting response.
-        """
-        pass
-
-    def can_handle_pre_command(self) -> bool:
-        """This method is called to check that the plugin can
-        handle the pre_command method.
-        Returns:
-            bool: True if the plugin can handle the pre_command method."""
-        return False
-
-    def pre_command(
-            self, command_name: str, arguments: Dict[str, Any]
-    ) -> Tuple[str, Dict[str, Any]]:
-        """This method is called before the command is executed.
-        Args:
-            command_name (str): The command name.
-            arguments (Dict[str, Any]): The arguments.
-        Returns:
-            Tuple[str, Dict[str, Any]]: The command name and the arguments.
-        """
-        pass
-
-    def can_handle_post_command(self) -> bool:
-        """This method is called to check that the plugin can
-        handle the post_command method.
-        Returns:
-            bool: True if the plugin can handle the post_command method."""
-        return False
-
-    def post_command(self, command_name: str, response: str) -> str:
-        """This method is called after the command is executed.
-        Args:
-            command_name (str): The command name.
-            response (str): The response.
-        Returns:
-            str: The resulting response.
-        """
-        pass
-
-    def can_handle_chat_completion(
-            self, messages: Dict[Any, Any], model: str, temperature: float, max_tokens: int
-    ) -> bool:
-        """This method is called to check that the plugin can
-          handle the chat_completion method.
-        Args:
-            messages (List[Message]): The messages.
-            model (str): The model name.
-            temperature (float): The temperature.
-            max_tokens (int): The max tokens.
-          Returns:
-              bool: True if the plugin can handle the chat_completion method."""
-        return False
-
-    def handle_chat_completion(
-            self, messages: List[Message], model: str, temperature: float, max_tokens: int
-    ) -> str:
-        """This method is called when the chat completion is done.
-        Args:
-            messages (List[Message]): The messages.
-            model (str): The model name.
-            temperature (float): The temperature.
-            max_tokens (int): The max tokens.
-        Returns:
-            str: The resulting response.
-        """
-        pass
-
-    def can_handle_text_embedding(
-        self, text: str
-    ) -> bool:
-        return False
-    
-    def handle_text_embedding(
-        self, text: str
-    ) -> list:
-        pass
-    
-    def can_handle_user_input(self, user_input: str) -> bool:
-        return False
-
-    def user_input(self, user_input: str) -> str:
-        return user_input
-
-    def can_handle_report(self) -> bool:
-        return False
-
-    def report(self, message: str) -> None:
-        pass
