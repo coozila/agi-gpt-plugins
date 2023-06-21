@@ -1,5 +1,5 @@
 import json
-from planner_task_manager import task_manager
+from .planner_task_manager import task_manager
 
 def assign_priority(task_id, priority):
     """Assign a priority to a task"""
