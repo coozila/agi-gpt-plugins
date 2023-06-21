@@ -2,6 +2,102 @@ from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
 from alpha_plugin_template import AlphaPluginTemplate
 
+import json
+import os
+
+current_working_directory = os.getcwd()
+workdir = os.path.join(
+    current_working_directory, "alpha", "alpha_workspace", "tasks.json"
+)
+file_name = workdir
+
+
+def create_task(task_id=None, task_description: str = None, status=False):
+    task = {"id": task_id, "description": task_description, "completed": status}
+    tasks = load_tasks()
+    tasks[str(task_id)] = task
+
+    save_tasks(tasks)
+
+    return tasks
+
+
+def load_tasks() -> dict:
+    if not os.path.exists(file_name):
+        with open(file_name, "w") as f:
+            f.write("{}")
+
+    with open(file_name) as f:
+        try:
+            tasks = json.load(f)
+            if isinstance(tasks, list):
+                tasks = {}
+        except json.JSONDecodeError:
+            tasks = {}
+
+    return tasks
+
+
+def save_tasks(tasks: dict):
+    with open(file_name, "w") as f:
+        json.dump(tasks, f)
+
+
+def update_task_status(task_id):
+    tasks = load_tasks()
+
+    if str(task_id) not in tasks:
+        return f"Task with ID {task_id} not found."
+
+    tasks[str(task_id)]["completed"] = True
+
+    save_tasks(tasks)
+
+    return f"Task with ID {task_id} has been marked as completed."
+
+
+def assign_priority(task_id, priority):
+    tasks = load_tasks()
+
+    if str(task_id) not in tasks:
+        return f"Task with ID {task_id} not found."
+
+    tasks[str(task_id)]["priority"] = priority
+
+    save_tasks(tasks)
+
+    return f"Priority {priority} assigned to task with ID {task_id}."
+
+
+def sort_tasks_by_priority():
+    tasks = load_tasks()
+
+    sorted_tasks = sorted(
+        tasks.values(),
+        key=lambda task: task.get("priority", 0),
+        reverse=True
+    )
+
+    return sorted_tasks
+
+
+def display_tasks_by_priority():
+    sorted_tasks = sort_tasks_by_priority()
+
+    if not sorted_tasks:
+        return "No tasks found."
+
+    output = "Tasks sorted by priority:\n"
+
+    for task in sorted_tasks:
+        task_id = task.get("id")
+        description = task.get("description")
+        priority = task.get("priority", 0)
+        output += f"Task ID: {task_id}, Priority: {priority}, Description: {description}\n"
+
+    return output
+
+
 from .planner import (
     check_plan,
     create_task,
@@ -17,131 +113,119 @@ from .planner_environmental_impact_assessment import assess_environmental_impact
 from .planner_version_control import manage_version_control
 from .planner_visualization import visualize_steps
 
-PromptGenerator = TypeVar("PromptGenerator")
+def initialize_plugins() -> AlphaPluginTemplate:
+    prompt = AlphaPluginTemplate("Planner", "Manage tasks and plans")
 
+    prompt.add_command(
+        "check_plan",
+        "Check the progress of a plan",
+        {"plan_id": "<int>"},
+        check_plan,
+    )
 
-class Message(TypedDict):
-    role: str
-    content: str
+    prompt.add_command(
+        "update_plan",
+        "Update the progress of a plan",
+        {"plan_id": "<int>", "progress": "<float>"},
+        update_plan,
+    )
 
+    prompt.add_command(
+        "create_task",
+        "Create a new task",
+        {
+            "task_id": "<int>",
+            "task_description": "<str>",
+            "status": "<bool> (optional)",
+        },
+        create_task,
+    )
 
-class PlannerPlugin(AlphaPluginTemplate):
-    """
-    This is a task planner system plugin for alpha which 
-    adds the task planning commands to the prompt.
-    """
+    prompt.add_command(
+        "update_task_status",
+        "Update the status of a task",
+        {"task_id": "<int>"},
+        update_task_status,
+    )
 
-    def __init__(self):
-        super().__init__()
-        self._name = "alpha-Planner-Plugin"
-        self._version = "0.1.1"
-        self._description = "This is a simple task planner module for alpha. It adds the run_planning_cycle " \
-                            "command along with other task related commands. Creates a plan.md file and tasks.json " \
-                            "to manage the workloads. For help and discussion: " \
-                            "https://discord.com/channels/1092243196446249134/1098737397094694922/threads/1102780261604790393"
+    prompt.add_command(
+        "assign_priority",
+        "Assign priority to a task",
+        {"task_id": "<int>", "priority": "<int>"},
+        assign_priority,
+    )
 
-    def post_prompt(self, prompt: PromptGenerator) -> PromptGenerator:
-        prompt.add_command(
-            "check_plan",
-            "Read the plan.md with the next goals to achieve",
-            {},
-            check_plan,
-        )
+    prompt.add_command(
+        "sort_tasks_by_priority",
+        "Sort tasks by priority",
+        {},
+        sort_tasks_by_priority,
+    )
 
-        prompt.add_command(
-            "run_planning_cycle",
-            "Improves the current plan.md and updates it with progress",
-            {},
-            update_plan,
-        )
+    prompt.add_command(
+        "display_tasks_by_priority",
+        "Display tasks sorted by priority",
+        {},
+        display_tasks_by_priority,
+    )
 
-        prompt.add_command(
-            "create_task",
-            "creates a task with a task id, description and a completed status of False ",
-            {
-                "task_id": "<int>",
-                "task_description": "<The task that must be performed>",
-            },
-            create_task,
-        )
+    prompt.add_command(
+        "prioritize_tasks",
+        "Prioritize tasks",
+        {"task_ids": "<List[int]>", "priority": "<int>"},
+        prioritize_tasks,
+    )
 
-        prompt.add_command(
-            "load_tasks",
-            "Checks out the task ids, their descriptionsand a completed status",
-            {},
-            load_tasks,
-        )
+    prompt.add_command(
+        "filter_tasks",
+        "Filter tasks based on status",
+        {"status": "<bool>"},
+        filter_tasks,
+    )
 
-        prompt.add_command(
-            "mark_task_completed",
-            "Updates the status of a task and marks it as completed",
-            {"task_id": "<int>"},
-            update_task_status,
-        )
+    prompt.add_command(
+        "update_task",
+        "Update a task",
+        {
+            "task_id": "<int>",
+            "new_description": "<str>",
+            "new_due_date": "<str>",
+        },
+        update_task,
+    )
 
-        prompt.add_command(
-            "prioritize_tasks",
-            "Prioritizes the tasks based on certain criteria",
-            {},
-            prioritize_tasks,
-        )
+    prompt.add_command(
+        "create_task_tracking",
+        "Create a task tracking record",
+        {
+            "task_id": "<int>",
+            "status": "<str>",
+            "progress": "<float>",
+            "due_date": "<str>",
+        },
+        create_task_tracking,
+    )
 
-        prompt.add_command(
-            "filter_tasks",
-            "Filter tasks based on progress, testing status, or date",
-            {},
-            filter_tasks,
-        )
+    prompt.add_command(
+        "assess_environmental_impact",
+        "Assess the environmental impact of the tasks",
+        {},
+        assess_environmental_impact,
+    )
 
-        prompt.add_command(
-            "update_task",
-            "Update the progress percentage, testing status, and date of a task",
-            {
-                "task_id": "<int>",
-                "progress": "<float>",
-                "testing_status": "<str>",
-                "date": "<str>",
-            },
-            update_task,
-        )
+    prompt.add_command(
+        "manage_version_control",
+        "Manage version control for tasks",
+        {},
+        manage_version_control,
+    )
 
-        prompt.add_command(
-            "create_task_tracking",
-            "Enhance the create_task function to include additional fields for tracking tasks",
-            {
-                "task_id": "<int>",
-                "task_title": "<str>",
-                "task_description": "<str>",
-                "quality_parameters": "<str>",
-                "progress": "<float>",
-                "due_date": "<str>",
-            },
-            create_task_tracking,
-        )
+    prompt.add_command(
+        "visualize_steps",
+        "Visualize the steps of a task",
+        {"task_id": "<int>"},
+        visualize_steps,
+    )
 
-        prompt.add_command(
-            "assess_environmental_impact",
-            "Assess the environmental impact of the tasks",
-            {},
-            assess_environmental_impact,
-        )
-
-        prompt.add_command(
-            "manage_version_control",
-            "Manage version control for tasks",
-            {},
-            manage_version_control,
-        )
-
-        prompt.add_command(
-            "visualize_steps",
-            "Visualize the steps of a task",
-            {"task_id": "<int>"},
-            visualize_steps,
-        )
-
-        return prompt
-
-    # Restul codului rămâne neschimbat
-    # ...
+    return prompt
 
