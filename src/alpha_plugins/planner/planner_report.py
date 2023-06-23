@@ -57,4 +57,15 @@ def load_events() -> dict:
     )
 
     if not os.path.exists(events_file_path):
-        with open(events_file
+        with open(events_file_path, "w") as f:
+            f.write("{}")
+
+    with open(events_file_path) as f:
+        try:
+            events = json.load(f)
+            if isinstance(events, list):
+                events = {}
+        except json.JSONDecodeError:
+            events = {}
+
+    return events

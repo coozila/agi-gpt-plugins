@@ -9,14 +9,14 @@ from .planner import (
     update_plan,
     update_task_status,
 )
-from .planner.planner_prioritization import prioritize_tasks
-from .planner.planner_filter import filter_tasks
-from .planner.planner_update import update_task
-from .planner.planner_tracking import create_task_tracking
-from .planner.planner_environmental_impact_assessment import assess_environmental_impact
-from .planner.planner_version_control import manage_version_control
-from .planner.planner_visualization import visualize_steps
-from .planner.planner_task_manager import task_manager
+from .planner_prioritization import prioritize_tasks
+from .planner_filter import filter_tasks
+from .planner_update import update_task
+from .planner_tracking import create_task_tracking
+from .planner_environmental_impact_assessment import assess_environmental_impact
+from .planner_version_control import manage_version_control
+from .planner_visualization import visualize_steps
+from .planner_task_manager import task_manager
 
 PromptGenerator = TypeVar("PromptGenerator")
 
@@ -34,7 +34,7 @@ class PlannerPlugin(AlphaPluginTemplate):
 
     def __init__(self):
         super().__init__()
-        self._name = "alpha-Planner-Plugin"
+        self._name = "Alpha-Planner-Plugin"
         self._version = "0.1.1"
         self._description = "This is a simple task planner module for alpha. It adds the run_planning_cycle " \
                             "command along with other task related commands. Creates a plan.md file and tasks.json " \

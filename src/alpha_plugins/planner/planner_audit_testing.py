@@ -1,7 +1,7 @@
 import os
 from typing import Any
 
-from memory import Memory
+from planner_memory import Memory
 
 
 def get_memory_backend() -> Any:

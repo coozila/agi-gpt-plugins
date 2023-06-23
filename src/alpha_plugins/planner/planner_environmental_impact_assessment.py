@@ -7,6 +7,9 @@ def perform_environmental_impact_assessment(plan):
     # Consider factors such as resource consumption, energy usage, emissions, and waste generation
     # Generate a report or score based on the assessment
 
+    # Define and populate the assessment_report variable
+    assessment_report = "Assessment report goes here"
+
     # Return the assessment report or score
     return assessment_report
 
