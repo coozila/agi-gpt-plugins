@@ -1,0 +1,116 @@
+{
+    "This": {
+        "object": true,
+        "definitions": [
+            "This"
+        ]
+    },
+    "project": {
+        "object": true,
+        "definitions": [
+            "project"
+        ]
+    },
+    "involves": {
+        "object": true,
+        "definitions": [
+            "involves"
+        ]
+    },
+    "building": {
+        "object": true,
+        "definitions": [
+            "building"
+        ]
+    },
+    "a": {
+        "object": true,
+        "definitions": [
+            "a"
+        ]
+    },
+    "house": {
+        "object": true,
+        "definitions": [
+            "house"
+        ]
+    },
+    "and": {
+        "object": true,
+        "definitions": [
+            "and"
+        ]
+    },
+    "installing": {
+        "object": true,
+        "definitions": [
+            "installing"
+        ]
+    },
+    "new": {
+        "object": true,
+        "definitions": [
+            "new"
+        ]
+    },
+    "computer": {
+        "object": true,
+        "definitions": [
+            "computer"
+        ]
+    },
+    "The": {
+        "object": true,
+        "definitions": [
+            "The"
+        ]
+    },
+    "will": {
+        "object": true,
+        "definitions": [
+            "will"
+        ]
+    },
+    "have": {
+        "object": true,
+        "definitions": [
+            "have"
+        ]
+    },
+    "multiple": {
+        "object": true,
+        "definitions": [
+            "multiple"
+        ]
+    },
+    "rooms": {
+        "object": true,
+        "definitions": [
+            "rooms"
+        ]
+    },
+    "garden": {
+        "object": true,
+        "definitions": [
+            "garden"
+        ]
+    },
+    "also": {
+        "object": true,
+        "definitions": [
+            "also"
+        ]
+    },
+    "include": {
+        "object": true,
+        "definitions": [
+            "include"
+        ]
+    },
+    "factory": {
+        "object": true,
+        "definitions": [
+            "factory"
+        ]
+    }
+}
