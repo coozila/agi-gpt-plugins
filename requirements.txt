@@ -1,6 +1,6 @@
 abstract-singleton
 atproto
-alpha_plugin_template
+alpha_plugin_template @ git+https://github.com/coozila/alpha-plugin-template.git
 black
 bs4
 build
