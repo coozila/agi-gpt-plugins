@@ -1,6 +1,6 @@
 abstract-singleton
 atproto
-agi_gpt_plugin_template @ git+https://github.com/coozila/agi-gpt-plugin-template.git
+agi-gpt-plugin-template @ git+https://github.com/coozila/agi-gpt-plugin-template
 black
 bs4
 build
