@@ -3,7 +3,7 @@ import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
 import tweepy
-from agi_gpt_plugin_template import AGI-GPTPluginTemplate
+from agi_gpt_plugin_template import AgiGptPluginTemplate
 
 PromptGenerator = TypeVar("PromptGenerator")
 
@@ -13,7 +13,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptTwitter(AGI-GPTPluginTemplate):
+class agi-gptTwitter(AgiGptPluginTemplate):
     """
     Twitter API integrations using Tweepy
     """

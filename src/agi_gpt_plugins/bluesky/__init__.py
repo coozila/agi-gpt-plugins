@@ -1,7 +1,7 @@
 """This is a Bluesky plugin for agi-gpt using atprototools."""
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi_gpt_plugin_template import AGI-GPTPluginTemplate
+from agi_gpt_plugin_template import AgiGptPluginTemplate
 
 PromptGenerator = TypeVar("PromptGenerator")
 
@@ -11,7 +11,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptBluesky(AGI-GPTPluginTemplate):
+class agi-gptBluesky(AgiGptPluginTemplate):
     """
     Bluesky plugin for agi-gpt using atprototools.
     """

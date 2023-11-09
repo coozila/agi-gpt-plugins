@@ -2,7 +2,7 @@
 import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi_gpt_plugin_template import AGI-GPTPluginTemplate
+from agi_gpt_plugin_template import AgiGptPluginTemplate
 
 from .news_search import NewsSearch
 
@@ -14,7 +14,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptNewsSearch(AGI-GPTPluginTemplate):
+class agi-gptNewsSearch(AgiGptPluginTemplate):
     def __init__(self):
         super().__init__()
         self._name = "News-Search-Plugin"

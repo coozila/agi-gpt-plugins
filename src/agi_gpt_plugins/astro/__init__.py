@@ -2,7 +2,7 @@
 import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi_gpt_plugin_template import AGI-GPTPluginTemplate
+from agi_gpt_plugin_template import AgiGptPluginTemplate
 
 PromptGenerator = TypeVar("PromptGenerator")
 
@@ -12,7 +12,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptSpacePlugin(AGI-GPTPluginTemplate):
+class agi-gptSpacePlugin(AgiGptPluginTemplate):
     """
     This is the agi-gpt space plugin.
     """

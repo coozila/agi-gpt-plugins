@@ -2,7 +2,7 @@
 
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi_gpt_plugin_template import AGI-GPTPluginTemplate
+from agi_gpt_plugin_template import AgiGptPluginTemplate
 
 from .api_tools import _make_api_call
 
@@ -13,7 +13,7 @@ class Message(TypedDict):
     role: str
     content: str
 
-class agi-gptApiTools(AGI-GPTPluginTemplate):
+class AgiGptApiTools(AgiGptPluginTemplate):
     """
     API Tools plugin for agi-gpt.
     """

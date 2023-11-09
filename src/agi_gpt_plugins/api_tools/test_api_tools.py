@@ -7,7 +7,7 @@ import requests_mock
 from .api_tools import _make_api_call
 
 
-class Testagi-gptAPITools():
+class TestAgiGptApiTools():
 
     # Test call methods
 
