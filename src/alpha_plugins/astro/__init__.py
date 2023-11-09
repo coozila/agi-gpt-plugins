@@ -1,8 +1,8 @@
-"""This is the email plugin for alpha."""
+"""This is the email plugin for agi-gpt."""
 import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from alpha_plugin_template import AlphaPluginTemplate
+from agi-gpt_plugin_template import agi-gptPluginTemplate
 
 PromptGenerator = TypeVar("PromptGenerator")
 
@@ -12,16 +12,16 @@ class Message(TypedDict):
     content: str
 
 
-class AlphaSpacePlugin(AlphaPluginTemplate):
+class agi-gptSpacePlugin(agi-gptPluginTemplate):
     """
-    This is the alpha space plugin.
+    This is the agi-gpt space plugin.
     """
 
     def __init__(self):
         super().__init__()
-        self._name = "alpha-Space-Plugin"
+        self._name = "agi-gpt-Space-Plugin"
         self._version = "0.1.3"
-        self._description = "alpha Space Plugin: Get the number of astronauts in space in real-time.."
+        self._description = "agi-gpt Space Plugin: Get the number of astronauts in space in real-time.."
         self.load_commands = True
 
     def post_prompt(self, prompt: PromptGenerator) -> PromptGenerator:

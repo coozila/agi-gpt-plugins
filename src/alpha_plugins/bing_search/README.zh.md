@@ -1,8 +1,8 @@
-# alpha 必应搜索插件
+# agi-gpt 必应搜索插件
 
-语言: [English](https://github.com/coozila/alpha-plugins/tree/master/src/alpha_plugins/bing_search/README.md) | [中文](https://github.com/coozila/alpha-plugins/tree/master/src/alpha_plugins/bing_search/README.zh.md)
+语言: [English](https://github.com/coozila/agi-gpt-plugins/tree/master/src/agi-gpt_plugins/bing_search/README.md) | [中文](https://github.com/coozila/agi-gpt-plugins/tree/master/src/agi-gpt_plugins/bing_search/README.zh.md)
 
-alpha 必应搜索插件是基础项目 alpha 的一个实用插件。为了扩展搜索选项，此搜索插件将必应搜索引擎集成到 alpha 中，补充了原有的 Google 搜索和 DuckDuckGo 搜索。
+agi-gpt 必应搜索插件是基础项目 agi-gpt 的一个实用插件。为了扩展搜索选项，此搜索插件将必应搜索引擎集成到 agi-gpt 中，补充了原有的 Google 搜索和 DuckDuckGo 搜索。
 
 ## 主要功能：
 - 必应搜索：使用必应搜索引擎进行搜索查询。
@@ -11,8 +11,8 @@ alpha 必应搜索插件是基础项目 alpha 的一个实用插件。为了扩�
 如果设置了搜索引擎（`SEARCH_ENGINE`）和Bing API密钥(`BING_API_KEY`)的环境变量，搜索引擎将设置为必应
 
 ## 安装:
-1. 以 ZIP 文件格式下载 alpha 必应搜索插件存储库。
-2. 将 ZIP 文件复制到 alpha 项目的 "plugins" 文件夹中。
+1. 以 ZIP 文件格式下载 agi-gpt 必应搜索插件存储库。
+2. 将 ZIP 文件复制到 agi-gpt 项目的 "plugins" 文件夹中。
 
 ### Bing API 密钥和必应搜索配置:
 1. 访问 [Bing Web Search API](https://www.microsoft.com/en-us/bing/apis/bing-web-search-api)。

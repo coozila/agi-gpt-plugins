@@ -20,7 +20,7 @@ def save_environmental_impact_assessment(plan_id, assessment_report):
 
 def load_environmental_impact_assessments():
     current_working_directory = os.getcwd()
-    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "environmental_assessments.json")
+    workdir = os.path.join(current_working_directory, "agi-gpt", "agi-gpt_workspace", "environmental_assessments.json")
     file_name = workdir
 
     if not os.path.exists(file_name):
@@ -39,7 +39,7 @@ def load_environmental_impact_assessments():
 
 def save_environmental_impact_assessments(assessments):
     current_working_directory = os.getcwd()
-    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "environmental_assessments.json")
+    workdir = os.path.join(current_working_directory, "agi-gpt", "agi-gpt_workspace", "environmental_assessments.json")
     file_name = workdir
 
     with open(file_name, "w") as f:

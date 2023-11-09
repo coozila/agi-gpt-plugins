@@ -4,9 +4,9 @@ from __future__ import annotations
 import pandas as pd
 import tweepy
 
-from . import AlphaTwitter
+from . import agi-gptTwitter
 
-plugin = AlphaTwitter()
+plugin = agi-gptTwitter()
 
 
 def post_tweet(tweet_text: str) -> str:

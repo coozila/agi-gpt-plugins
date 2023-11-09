@@ -1,7 +1,7 @@
 """Wikipedia search integrations."""
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from alpha_plugin_template import AlphaPluginTemplate
+from agi-gpt_plugin_template import agi-gptPluginTemplate
 
 from .wikipedia_search import _wikipedia_search
 
@@ -13,14 +13,14 @@ class Message(TypedDict):
     content: str
 
 
-class AlphaWikipediaSearch(AlphaPluginTemplate):
+class agi-gptWikipediaSearch(agi-gptPluginTemplate):
     """
     Wikipedia search integrations
     """
 
     def __init__(self):
         super().__init__()
-        self._name = "alpha-wikipedia-search"
+        self._name = "agi-gpt-wikipedia-search"
         self._version = "0.1.0"
         self._description = "Wikipedia search integrations."
 

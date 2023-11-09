@@ -1,9 +1,9 @@
-# alpha SceneXplain Plugin: Explore image storytelling beyond pixels
+# agi-gpt SceneXplain Plugin: Explore image storytelling beyond pixels
 
 [SceneXplain](https://scenex.jina.ai) is your gateway to revealing the rich narratives hidden within your images. Our cutting-edge AI technology dives deep into every detail, generating sophisticated textual descriptions that breathe life into your visuals. With a user-friendly interface and seamless API integration, SceneX empowers developers to effortlessly incorporate our advanced service into their multimodal applications.
 
 <img width="1580" alt="image" src="https://user-images.githubusercontent.com/2041322/234498702-39b668a2-d097-4b74-b51f-43073f3aeb3a.png">
-<img width="1116" alt="alpha-scenex-plugin" src="https://user-images.githubusercontent.com/492616/234332762-642bfd6c-045e-426d-b8cd-70aaf53ff894.png">
+<img width="1116" alt="agi-gpt-scenex-plugin" src="https://user-images.githubusercontent.com/492616/234332762-642bfd6c-045e-426d-b8cd-70aaf53ff894.png">
 
 ## 🌟 Key Features
 
@@ -14,19 +14,19 @@
 
 ## 🔧 Installation
 
-Follow these steps to configure the alpha SceneX Plugin:
+Follow these steps to configure the agi-gpt SceneX Plugin:
 
-### 1. Follow alpha-plugins Installation Instructions
+### 1. Follow agi-gpt-plugins Installation Instructions
 
-Follow the instructions as per the [alpha-plugins/README.md](https://github.com/coozila/alpha-plugins/blob/master/README.md)
+Follow the instructions as per the [agi-gpt-plugins/README.md](https://github.com/coozila/agi-gpt-plugins/blob/master/README.md)
 
 ### 2. Locate the `.env.template` file
 
-Find the file named `.env.template` in the main `/alpha` folder.
+Find the file named `.env.template` in the main `/agi-gpt` folder.
 
 ### 3. Create and rename a copy of the file
 
-Duplicate the `.env.template` file and rename the copy to `.env` inside the `/alpha` folder.
+Duplicate the `.env.template` file and rename the copy to `.env` inside the `/agi-gpt` folder.
 
 ### 4. Edit the `.env` file
 
@@ -58,15 +58,15 @@ In your `.env` search for `ALLOWLISTED_PLUGINS` and add this Plugin:
 ################################################################################
 
 #ALLOWLISTED_PLUGINS - Sets the listed plugins that are allowed (Example: plugin1,plugin2,plugin3)
-ALLOWLISTED_PLUGINS=AlphaSceneXPlugin
+ALLOWLISTED_PLUGINS=agi-gptSceneXPlugin
 ```
 
-## 🧪 Test the alpha SceneX Plugin
+## 🧪 Test the agi-gpt SceneX Plugin
 
 Experience the plugin's capabilities by testing it for describing an image.
 
-1. **Configure alpha:**
-   Set up alpha with the following parameters:
+1. **Configure agi-gpt:**
+   Set up agi-gpt with the following parameters:
 
    - Name: `ImageGPT`
    - Role: `Describe a given image`
@@ -74,5 +74,5 @@ Experience the plugin's capabilities by testing it for describing an image.
      1. Goal 1: `Describe an image. Image URL is https://storage.googleapis.com/causal-diffusion.appspot.com/imagePrompts%2F0rw369i5h9t%2Foriginal.png.`
      2. Goal 2: `Terminate`
 
-2. **Run alpha:**
-   Launch alpha, which should use the SceneXplain plugin to describe an image.
+2. **Run agi-gpt:**
+   Launch agi-gpt, which should use the SceneXplain plugin to describe an image.

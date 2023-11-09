@@ -1,4 +1,4 @@
-"""API Call command for alpha."""
+"""API Call command for agi-gpt."""
 
 import json
 import re

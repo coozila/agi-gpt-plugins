@@ -1,7 +1,7 @@
 import json
 import os
 
-MEMORY_FILE_PATH = os.path.join(os.getcwd(), "alpha", "alpha_workspace", "planner_memory.json")
+MEMORY_FILE_PATH = os.path.join(os.getcwd(), "agi-gpt", "agi-gpt_workspace", "planner_memory.json")
 
 def load_memory():
     if not os.path.exists(MEMORY_FILE_PATH):

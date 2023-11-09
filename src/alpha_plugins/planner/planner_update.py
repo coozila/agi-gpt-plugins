@@ -27,7 +27,7 @@ def update_task_status(task_id, progress=None, testing_status=None, due_date=Non
 def save_memory(tasks):
     # Save the tasks to memory (JSON)
     current_working_directory = os.getcwd()
-    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "tasks.json")
+    workdir = os.path.join(current_working_directory, "agi-gpt", "agi-gpt_workspace", "tasks.json")
     file_name = workdir
 
     with open(file_name, "w") as f:

@@ -1,9 +1,9 @@
-"""WolframAlpha search integrations."""
+"""Wolframagi-gpt search integrations."""
 import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from alpha_plugin_template import AlphaPluginTemplate
-from wolframalpha import Client
+from agi-gpt_plugin_template import agi-gptPluginTemplate
+from wolframagi-gpt import Client
 
 PromptGenerator = TypeVar("PromptGenerator")
 
@@ -13,26 +13,26 @@ class Message(TypedDict):
     content: str
 
 
-class AlphaWolframAlphaSearch(AlphaPluginTemplate):
+class agi-gptWolframagi-gptSearch(agi-gptPluginTemplate):
     """
-    WolframAlpha search integrations
+    Wolframagi-gpt search integrations
     """
 
     def __init__(self):
         super().__init__()
-        self._name = "alpha-wolframalpha-search"
+        self._name = "agi-gpt-wolframagi-gpt-search"
         self._version = "0.1.0"
-        self._description = ("WolframAlpha is an answer engine, it answers "
+        self._description = ("Wolframagi-gpt is an answer engine, it answers "
                              "factual queries by computing answers from "
                              "externally sourced data. It can provide answers "
                              "to math, data and science queries.")
-        self.wolframalpha_appid = os.getenv("WOLFRAMALPHA_APPID")
+        self.wolframagi-gpt_appid = os.getenv("WOLFRAMagi-gpt_APPID")
 
         self.api = None
-        if self.wolframalpha_appid is not None:
-            self.api = Client(self.wolframalpha_appid)
+        if self.wolframagi-gpt_appid is not None:
+            self.api = Client(self.wolframagi-gpt_appid)
         else:
-            print("WolframAlpha AppID not found in .env file.")
+            print("Wolframagi-gpt AppID not found in .env file.")
 
     def can_handle_on_response(self) -> bool:
         """This method is called to check that the plugin can
@@ -214,12 +214,12 @@ class AlphaWolframAlphaSearch(AlphaPluginTemplate):
             PromptGenerator: The prompt generator.
         """
         if self.api:
-            from .wolframalpha_search import _wolframalpha_search
+            from .wolframagi-gpt_search import _wolframagi-gpt_search
             prompt.add_command(
-                "wolframalpha_search",
+                "wolframagi-gpt_search",
                 self._description,
                 {"query": "<query>"},
-                _wolframalpha_search,
+                _wolframagi-gpt_search,
             )
         return prompt
 

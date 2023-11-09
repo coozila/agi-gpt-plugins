@@ -3,7 +3,7 @@ import os
 import re
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from alpha_plugin_template import AlphaPluginTemplate
+from agi-gpt_plugin_template import agi-gptPluginTemplate
 
 from .telegram_chat import TelegramUtils
 
@@ -20,17 +20,17 @@ def remove_color_codes(s: str) -> str:
     return ansi_escape.sub("", s)
 
 
-class AlphaTelegram(AlphaPluginTemplate):
+class agi-gptTelegram(agi-gptPluginTemplate):
     """
     Telegram controller bot integration using python-telegram-bot.
     """
 
     def __init__(self):
         super().__init__()
-        self._name = "alpha-Telegram"
+        self._name = "agi-gpt-Telegram"
         self._version = "0.2.0"
         self._description = (
-            "This integrates a Telegram chat bot with your alpha instance."
+            "This integrates a Telegram chat bot with your agi-gpt instance."
         )
         self.telegram_api_key = os.getenv("TELEGRAM_API_KEY", None)
         self.telegram_chat_id = os.getenv("TELEGRAM_CHAT_ID", None)

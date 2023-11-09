@@ -127,8 +127,8 @@ class TelegramUtils:
     async def set_commands(self, bot):
         await bot.set_my_commands(
             [
-                ("start", "Start alpha"),
-                ("stop", "Stop alpha"),
+                ("start", "Start agi-gpt"),
+                ("stop", "Stop agi-gpt"),
                 ("help", "Show help"),
                 ("yes", "Confirm"),
                 ("no", "Deny"),
@@ -173,7 +173,7 @@ class TelegramUtils:
         # only display confirm if the prompt doesnt have the string ""Continue (y/n):"" inside
         if "Continue (y/n):" in prompt or "Waiting for your response..." in prompt:
             question = prompt + " \n Confirm: /yes     Decline: /no \n Or type your answer. \n or press /auto to let an Agent decide."
-        elif "I want alpha to:" in prompt:
+        elif "I want agi-gpt to:" in prompt:
             question = prompt
         else:
             question = prompt + " \n Type your answer or press /auto to let an Agent decide."
@@ -200,7 +200,7 @@ class TelegramUtils:
         if response_queue == "/auto":
             return "s"
         if response_queue == "/stop":
-            self.send_message("Stopping alpha now!")
+            self.send_message("Stopping agi-gpt now!")
             exit(0)
         elif response_queue == "/yes":
             response_text = "yes"

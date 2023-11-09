@@ -1,6 +1,6 @@
-# desojo/alpha-twitter 🐣
+# desojo/agi-gpt-twitter 🐣
 
-A plugin adding twitter API integration into alpha
+A plugin adding twitter API integration into agi-gpt
 
 ## Features(more coming soon!)
 
@@ -12,7 +12,7 @@ A plugin adding twitter API integration into alpha
 ## Installation
 
 1. Clone this repo as instructed in the main repository
-2. Add this chunk of code along with your twitter API information to the `.env` file within alpha:
+2. Add this chunk of code along with your twitter API information to the `.env` file within agi-gpt:
 
 ```
 ################################################################################
@@ -32,7 +32,7 @@ TW_CLIENT_ID_SECRET=
 ### ALLOWLISTED PLUGINS
 ################################################################################
 
-ALLOWLISTED_PLUGINS=AlphaTwitter
+ALLOWLISTED_PLUGINS=agi-gptTwitter
 
 ```
 

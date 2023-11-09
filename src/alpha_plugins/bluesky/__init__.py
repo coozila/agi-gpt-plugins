@@ -1,7 +1,7 @@
-"""This is a Bluesky plugin for alpha using atprototools."""
+"""This is a Bluesky plugin for agi-gpt using atprototools."""
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from alpha_plugin_template import AlphaPluginTemplate
+from agi-gpt_plugin_template import agi-gptPluginTemplate
 
 PromptGenerator = TypeVar("PromptGenerator")
 
@@ -11,14 +11,14 @@ class Message(TypedDict):
     content: str
 
 
-class AlphaBluesky(AlphaPluginTemplate):
+class agi-gptBluesky(agi-gptPluginTemplate):
     """
-    Bluesky plugin for alpha using atprototools.
+    Bluesky plugin for agi-gpt using atprototools.
     """
 
     def __init__(self):
         super().__init__()
-        self._name = "alpha-bluesky"
+        self._name = "agi-gpt-bluesky"
         self._version = "0.1.0"
         self._description = "Bluesky integration using atprototools."
 

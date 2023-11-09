@@ -1,8 +1,8 @@
-"""This is the News search engine plugin for alpha."""
+"""This is the News search engine plugin for agi-gpt."""
 import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from alpha_plugin_template import AlphaPluginTemplate
+from agi-gpt_plugin_template import agi-gptPluginTemplate
 
 from .news_search import NewsSearch
 
@@ -14,7 +14,7 @@ class Message(TypedDict):
     content: str
 
 
-class AlphaNewsSearch(AlphaPluginTemplate):
+class agi-gptNewsSearch(agi-gptPluginTemplate):
     def __init__(self):
         super().__init__()
         self._name = "News-Search-Plugin"

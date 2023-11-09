@@ -30,7 +30,7 @@ def load_tasks() -> dict:
 
     current_working_directory = os.getcwd()
     tasks_file_path = os.path.join(
-        current_working_directory, "alpha", "alpha_workspace", "tasks.json"
+        current_working_directory, "agi-gpt", "agi-gpt_workspace", "tasks.json"
     )
 
     if not os.path.exists(tasks_file_path):
@@ -53,7 +53,7 @@ def load_events() -> dict:
 
     current_working_directory = os.getcwd()
     events_file_path = os.path.join(
-        current_working_directory, "alpha", "alpha_workspace", "events.json"
+        current_working_directory, "agi-gpt", "agi-gpt_workspace", "events.json"
     )
 
     if not os.path.exists(events_file_path):

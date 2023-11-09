@@ -1,8 +1,8 @@
-# alpha Bing Search Plugin
+# agi-gpt Bing Search Plugin
 
-Language: [English](https://github.com/coozila/alpha-plugins/tree/master/src/alpha_plugins/bing_search/README.md) | [中文](https://github.com/coozila/alpha-plugins/tree/master/src/alpha_plugins/bing_search/README.zh.md)
+Language: [English](https://github.com/coozila/agi-gpt-plugins/tree/master/src/agi-gpt_plugins/bing_search/README.md) | [中文](https://github.com/coozila/agi-gpt-plugins/tree/master/src/agi-gpt_plugins/bing_search/README.zh.md)
 
-The alpha Bing Search Plugin is a useful plugin for the base project, alpha. With the aim of expand the search experience, this search plugin integrates Bing search engines into alpha, complementing the existing support for Google Search and DuckDuckGo Search provided by the main repository.
+The agi-gpt Bing Search Plugin is a useful plugin for the base project, agi-gpt. With the aim of expand the search experience, this search plugin integrates Bing search engines into agi-gpt, complementing the existing support for Google Search and DuckDuckGo Search provided by the main repository.
 
 ## Key Features:
 - Bing Search: Perform search queries using the Bing search engine.
@@ -11,8 +11,8 @@ The alpha Bing Search Plugin is a useful plugin for the base project, alpha. Wit
 If the environment variables for the search engine (`SEARCH_ENGINE`) and the Bing API key (`BING_API_KEY`) are set, the search engine will be set to Bing.
 
 ## Installation:
-1. Download the alpha Bing Search Plugin repository as a ZIP file.
-2. Copy the ZIP file into the "plugins" folder of your alpha project.
+1. Download the agi-gpt Bing Search Plugin repository as a ZIP file.
+2. Copy the ZIP file into the "plugins" folder of your agi-gpt project.
 
 ### Bing API Key and Bing Search Configuration:
 1. Go to the [Bing Web Search API](https://www.microsoft.com/en-us/bing/apis/bing-web-search-api) website.

@@ -1,8 +1,8 @@
-# alpha 百度搜索插件
+# agi-gpt 百度搜索插件
 
-语言: [English](https://github.com/coozila/alpha-plugins/tree/master/src/alpha_plugins/baidu_search/README.md) | [中文](https://github.com/coozila/alpha-plugins/tree/master/src/alpha_plugins/baidu_search/README.zh.md)
+语言: [English](https://github.com/coozila/agi-gpt-plugins/tree/master/src/agi-gpt_plugins/baidu_search/README.md) | [中文](https://github.com/coozila/agi-gpt-plugins/tree/master/src/agi-gpt_plugins/baidu_search/README.zh.md)
 
-此搜索插件将百度搜索引擎集成到 alpha 中，补充了原有的 Google 搜索和 DuckDuckGo 搜索。
+此搜索插件将百度搜索引擎集成到 agi-gpt 中，补充了原有的 Google 搜索和 DuckDuckGo 搜索。
 
 ## 主要功能：
 - 百度搜索：使用百度搜索引擎进行搜索查询。
@@ -29,4 +29,4 @@ BAIDU_COOKIE=your-baidu-cookie
 请将 `your-baidu-cookie` 替换为从 Chrome 开发者工具获取的实际 Cookie 内容。
 
 ## 注意事项
-在大多数情况下，Alpha的查询关键词会被自动设置为英文。如果你想用中文关键词搜索，你可以在goals中明确指定语言。
+在大多数情况下，agi-gpt的查询关键词会被自动设置为英文。如果你想用中文关键词搜索，你可以在goals中明确指定语言。

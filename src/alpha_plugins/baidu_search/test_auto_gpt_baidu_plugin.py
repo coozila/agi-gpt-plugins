@@ -4,15 +4,15 @@ from typing import List
 
 import requests
 
-from . import AlphaBaiduSearch
+from . import agi-gptBaiduSearch
 from .baidu_search import _baidu_search
 
 
-class TestAlphaBaiduSearch(unittest.TestCase):
+class Testagi-gptBaiduSearch(unittest.TestCase):
     def setUp(self):
         os.environ["BAIDU_COOKIE"] = "test_cookie"
         os.environ["SEARCH_ENGINE"] = "baidu"
-        self.plugin = AlphaBaiduSearch()
+        self.plugin = agi-gptBaiduSearch()
 
     def tearDown(self):
         os.environ.pop("SEARCH_ENGINE", None)
@@ -27,7 +27,7 @@ class TestAlphaBaiduSearch(unittest.TestCase):
 
     def test_pre_command(self):
         os.environ["SEARCH_ENGINE"] = "baidu"
-        self.plugin = AlphaBaiduSearch()
+        self.plugin = agi-gptBaiduSearch()
 
         command_name, arguments = self.plugin.pre_command(
             "google", {"query": "test query"}

@@ -1,8 +1,8 @@
-"""This is a SceneX plugin for describing images for alpha."""
+"""This is a SceneX plugin for describing images for agi-gpt."""
 import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from alpha_plugin_template import AlphaPluginTemplate
+from agi-gpt_plugin_template import agi-gptPluginTemplate
 from colorama import Fore
 
 from .scenex_plugin import SceneXplain
@@ -15,9 +15,9 @@ class Message(TypedDict):
     content: str
 
 
-class AlphaSceneXPlugin(AlphaPluginTemplate):
+class agi-gptSceneXPlugin(agi-gptPluginTemplate):
     """
-    This is the alpha SceneX plugin.
+    This is the agi-gpt SceneX plugin.
     """
 
     def __init__(self):

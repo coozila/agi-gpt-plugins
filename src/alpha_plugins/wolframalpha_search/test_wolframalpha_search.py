@@ -3,22 +3,22 @@ import unittest
 
 import requests
 
-from . import AlphaWolframAlphaSearch
+from . import agi-gptWolframagi-gptSearch
 
 
-class TestAlphaWolframAlphaSearch(unittest.TestCase):
+class Testagi-gptWolframagi-gptSearch(unittest.TestCase):
     def setUp(self):
-        os.environ["WOLFRAMALPHA_APPID"] = "test_appid"
-        self.plugin = AlphaWolframAlphaSearch()
+        os.environ["WOLFRAMagi-gpt_APPID"] = "test_appid"
+        self.plugin = agi-gptWolframagi-gptSearch()
 
     def tearDown(self):
-        os.environ.pop("WOLFRAMALPHA_APPID", None)
+        os.environ.pop("WOLFRAMagi-gpt_APPID", None)
 
-    def test_wolframalpha_search(self):
+    def test_wolframagi-gpt_search(self):
         query = "2+2"
         try:
-            from .wolframalpha_search import _wolframalpha_search
-            _wolframalpha_search(query)
+            from .wolframagi-gpt_search import _wolframagi-gpt_search
+            _wolframagi-gpt_search(query)
         except requests.exceptions.HTTPError as e:
             self.assertEqual(e.response.status_code, 401)
 

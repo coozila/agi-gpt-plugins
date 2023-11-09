@@ -1,8 +1,8 @@
-"""API Tools for alpha."""
+"""API Tools for agi-gpt."""
 
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from alpha_plugin_template import AlphaPluginTemplate
+from agi-gpt_plugin_template import agi-gptPluginTemplate
 
 from .api_tools import _make_api_call
 
@@ -13,16 +13,16 @@ class Message(TypedDict):
     role: str
     content: str
 
-class AlphaApiTools(AlphaPluginTemplate):
+class agi-gptApiTools(agi-gptPluginTemplate):
     """
-    API Tools plugin for alpha.
+    API Tools plugin for agi-gpt.
     """
 
     def __init__(self):
         super().__init__()
-        self._name = "alpha-api-tools"
+        self._name = "agi-gpt-api-tools"
         self._version = "0.1.0"
-        self._description = "Allow alpha to make API calls to outside services."
+        self._description = "Allow agi-gpt to make API calls to outside services."
 
     def can_handle_on_response(self) -> bool:
         """This method is called to check that the plugin can

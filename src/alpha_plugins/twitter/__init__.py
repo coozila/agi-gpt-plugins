@@ -3,7 +3,7 @@ import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
 import tweepy
-from alpha_plugin_template import AlphaPluginTemplate
+from agi-gpt_plugin_template import agi-gptPluginTemplate
 
 PromptGenerator = TypeVar("PromptGenerator")
 
@@ -13,14 +13,14 @@ class Message(TypedDict):
     content: str
 
 
-class AlphaTwitter(AlphaPluginTemplate):
+class agi-gptTwitter(agi-gptPluginTemplate):
     """
     Twitter API integrations using Tweepy
     """
 
     def __init__(self):
         super().__init__()
-        self._name = "alpha-twitter"
+        self._name = "agi-gpt-twitter"
         self._version = "0.1.0"
         self._description = "Twitter API integrations using Tweepy."
         self.twitter_consumer_key = os.getenv("TW_CONSUMER_KEY")

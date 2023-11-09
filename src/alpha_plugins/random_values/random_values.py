@@ -1,4 +1,4 @@
-"""Random Values classes for alpha."""
+"""Random Values classes for agi-gpt."""
 
 import json
 import random
@@ -7,7 +7,7 @@ import uuid
 
 import lorem
 
-"""Random Number function for alpha."""
+"""Random Number function for agi-gpt."""
 
 
 def _random_number(min=0, max=65535, count=1) -> str:
@@ -54,7 +54,7 @@ def _random_number(min=0, max=65535, count=1) -> str:
     return json.dumps(random_numbers)
 
 
-"""Random UUID function for alpha."""
+"""Random UUID function for agi-gpt."""
 
 
 def _make_uuids(count=1) -> str:
@@ -85,7 +85,7 @@ def _make_uuids(count=1) -> str:
     return json.dumps(uuids)
 
 
-"""Random String function for alpha."""
+"""Random String function for agi-gpt."""
 
 
 def _generate_string(length=10, count=1) -> str:
@@ -126,7 +126,7 @@ def _generate_string(length=10, count=1) -> str:
     return json.dumps(strings)
 
 
-"""Random Password function for alpha."""
+"""Random Password function for agi-gpt."""
 
 
 def _generate_password(length=16, count=1) -> str:
@@ -170,7 +170,7 @@ def _generate_password(length=16, count=1) -> str:
     return json.dumps(passwords)
 
 
-"""Random Lorem Ipsum function for alpha."""
+"""Random Lorem Ipsum function for agi-gpt."""
 
 
 def _generate_placeholder_text(sentences=1) -> str:

@@ -1,4 +1,4 @@
-# Alpha Planner Plugin
+# agi-gpt Planner Plugin
 Simple planning commands for planning leveraged with chatgpt3.5 and json objects to keep track of its progress on a list of tasks.
 
 ![image](https://user-images.githubusercontent.com/12145726/235688701-af549b76-7f9f-4426-9c88-dd72aca45685.png)
@@ -6,7 +6,7 @@ Simple planning commands for planning leveraged with chatgpt3.5 and json objects
 
 ### Getting started
 
-After you clone the plugin from the original repo (https://github.com/rihp/alpha-planner-plugin) Add it to the plugins folder of your alpha repo and then run alpha
+After you clone the plugin from the original repo (https://github.com/rihp/agi-gpt-planner-plugin) Add it to the plugins folder of your agi-gpt repo and then run agi-gpt
 
 ![image](https://user-images.githubusercontent.com/12145726/235688224-7abf6ae4-5c0a-4e2d-b1b2-18241c6d74b4.png)
 
@@ -108,10 +108,10 @@ def generate_improved_plan(prompt: str) -> str:
 
 Clone the repo and modify the functionality, when you're done you can run 
 ```
-zip -ru ../fork/plugins/planner.zip . ; cd ../fork && python3 -m alpha --debug 
+zip -ru ../fork/plugins/planner.zip . ; cd ../fork && python3 -m agi-gpt --debug 
 ```
 
 then you need to cd back to 
 ```
-cd ../alpha-planner-plugin    
+cd ../agi-gpt-planner-plugin    
 ```

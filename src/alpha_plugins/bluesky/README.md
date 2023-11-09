@@ -1,6 +1,6 @@
-# alpha Bluesky Plugin
+# agi-gpt Bluesky Plugin
 
-A plugin that adds Bluesky API integration into alpha
+A plugin that adds Bluesky API integration into agi-gpt
 
 ## Features (more coming soon!)
 
@@ -10,7 +10,7 @@ A plugin that adds Bluesky API integration into alpha
 ## Installation
 
 1. Clone this repo as instructed in the main repository
-2. Add this chunk of code along with your Bluesky Username and App Password information to the `.env` file within alpha:
+2. Add this chunk of code along with your Bluesky Username and App Password information to the `.env` file within agi-gpt:
 
 ```
 ################################################################################

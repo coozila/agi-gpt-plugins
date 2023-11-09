@@ -8,11 +8,11 @@ from .news_search import NewsSearch
 
 class TestNewsSearch:
     def mock_response(self, *args, **kwargs):
-        # Mock Response of NewsAPI. We have result for alpha in technology but not others,
+        # Mock Response of NewsAPI. We have result for agi-gpt in technology but not others,
         # whereas Cricket is present in Sports/Entertainment but not others
         if kwargs["q"] == "AI" and kwargs["category"] == "technology":
             return json.loads(
-                """{"status":"ok","totalResults":1,"articles": [{"title": "alpha"}]}"""
+                """{"status":"ok","totalResults":1,"articles": [{"title": "agi-gpt"}]}"""
             )
         elif kwargs["q"] == "Cricket" and kwargs["category"] in [
             "entertainment",
@@ -41,9 +41,9 @@ class TestNewsSearch:
     def test_news_search(self):
         # For AI, only technology should be populated. However, we can't rely on ordering,
         # so we'll assert one actual answer and 5 empty answers
-        actual_output_alpha = self.NewsSearch.news_headlines_search_wrapper("AI")
-        assert actual_output_alpha.count(["alpha"]) == 1
-        assert actual_output_alpha.count([]) == 5
+        actual_output_agi-gpt = self.NewsSearch.news_headlines_search_wrapper("AI")
+        assert actual_output_agi-gpt.count(["agi-gpt"]) == 1
+        assert actual_output_agi-gpt.count([]) == 5
 
         # For Cricket, we should have sports/entertainment
         actual_output_cricket = self.NewsSearch.news_headlines_search_wrapper("Cricket")

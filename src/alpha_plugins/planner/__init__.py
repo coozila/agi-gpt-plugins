@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from alpha_plugin_template import AlphaPluginTemplate
+from agi-gpt_plugin_template import agi-gptPluginTemplate
 
 from .planner import (
     check_plan,
@@ -26,17 +26,17 @@ class Message(TypedDict):
     content: str
 
 
-class PlannerPlugin(AlphaPluginTemplate):
+class PlannerPlugin(agi-gptPluginTemplate):
     """
-    This is a task planner system plugin for alpha which 
+    This is a task planner system plugin for agi-gpt which 
     adds the task planning commands to the prompt.
     """
 
     def __init__(self):
         super().__init__()
-        self._name = "Alpha-Planner-Plugin"
+        self._name = "agi-gpt-Planner-Plugin"
         self._version = "0.1.1"
-        self._description = "This is a simple task planner module for alpha. It adds the run_planning_cycle " \
+        self._description = "This is a simple task planner module for agi-gpt. It adds the run_planning_cycle " \
                             "command along with other task related commands. Creates a plan.md file and tasks.json " \
                             "to manage the workloads. For help and discussion: " \
                             "https://discord.com/channels/1092243196446249134/1098737397094694922/threads/1102780261604790393"

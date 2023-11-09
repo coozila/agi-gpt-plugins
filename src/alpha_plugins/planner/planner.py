@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 def check_plan():
     current_working_directory = os.getcwd()
-    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "plan.json")
+    workdir = os.path.join(current_working_directory, "agi-gpt", "agi-gpt_workspace", "plan.json")
     file_name = workdir
 
     if not os.path.exists(file_name):
@@ -34,7 +34,7 @@ def check_plan():
 
 def update_plan():
     current_working_directory = os.getcwd()
-    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "plan.json")
+    workdir = os.path.join(current_working_directory, "agi-gpt", "agi-gpt_workspace", "plan.json")
     file_name = workdir
 
     with open(file_name, "r") as file:
@@ -87,7 +87,7 @@ def create_task(task_id=None, task_description: str = None, status=False):
     tasks[str(task_id)] = task
 
     current_working_directory = os.getcwd()
-    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "tasks.json")
+    workdir = os.path.join(current_working_directory, "agi-gpt", "agi-gpt_workspace", "tasks.json")
     file_name = workdir
 
     with open(file_name, "w") as f:
@@ -98,7 +98,7 @@ def create_task(task_id=None, task_description: str = None, status=False):
 
 def load_tasks() -> dict:
     current_working_directory = os.getcwd()
-    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "tasks.json")
+    workdir = os.path.join(current_working_directory, "agi-gpt", "agi-gpt_workspace", "tasks.json")
     file_name = workdir
 
     if not os.path.exists(file_name):
@@ -126,7 +126,7 @@ def update_task_status(task_id):
     tasks[str(task_id)]["completed"] = True
 
     current_working_directory = os.getcwd()
-    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "tasks.json")
+    workdir = os.path.join(current_working_directory, "agi-gpt", "agi-gpt_workspace", "tasks.json")
     file_name = workdir
 
     with open(file_name, "w") as f:

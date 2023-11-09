@@ -8,7 +8,7 @@ def create_event(event_id=None, event_data: str = None):
 
     current_working_directory = os.getcwd()
     workdir = os.path.join(
-        current_working_directory, "alpha", "alpha_workspace", "calendar.json"
+        current_working_directory, "agi-gpt", "agi-gpt_workspace", "calendar.json"
     )
     file_name = workdir
 
@@ -22,7 +22,7 @@ def load_events() -> dict:
     """Load the events from the calendar"""
     current_working_directory = os.getcwd()
     workdir = os.path.join(
-        current_working_directory, "alpha", "alpha_workspace", "calendar.json"
+        current_working_directory, "agi-gpt", "agi-gpt_workspace", "calendar.json"
     )
     file_name = workdir
 
@@ -62,7 +62,7 @@ def update_event(event_id, event_data: str):
 
     current_working_directory = os.getcwd()
     workdir = os.path.join(
-        current_working_directory, "alpha", "alpha_workspace", "calendar.json"
+        current_working_directory, "agi-gpt", "agi-gpt_workspace", "calendar.json"
     )
     file_name = workdir
 
@@ -83,7 +83,7 @@ def delete_event(event_id):
 
     current_working_directory = os.getcwd()
     workdir = os.path.join(
-        current_working_directory, "alpha", "alpha_workspace", "calendar.json"
+        current_working_directory, "agi-gpt", "agi-gpt_workspace", "calendar.json"
     )
     file_name = workdir
 

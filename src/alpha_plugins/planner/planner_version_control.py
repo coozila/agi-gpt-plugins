@@ -11,7 +11,7 @@ def create_version(version_data):
 
 def load_versions():
     current_working_directory = os.getcwd()
-    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "versions.json")
+    workdir = os.path.join(current_working_directory, "agi-gpt", "agi-gpt_workspace", "versions.json")
     file_name = workdir
 
     if not os.path.exists(file_name):
@@ -30,7 +30,7 @@ def load_versions():
 
 def save_versions(versions):
     current_working_directory = os.getcwd()
-    workdir = os.path.join(current_working_directory, "alpha", "alpha_workspace", "versions.json")
+    workdir = os.path.join(current_working_directory, "agi-gpt", "agi-gpt_workspace", "versions.json")
     file_name = workdir
 
     with open(file_name, "w") as f:

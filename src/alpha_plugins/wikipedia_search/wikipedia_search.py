@@ -1,4 +1,4 @@
-"""Wikipedia search command for alpha."""
+"""Wikipedia search command for agi-gpt."""
 from __future__ import annotations
 
 import json

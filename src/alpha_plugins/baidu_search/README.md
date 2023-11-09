@@ -1,8 +1,8 @@
-# alpha Baidu Search Plugin
+# agi-gpt Baidu Search Plugin
 
-Language: [English](https://github.com/coozila/alpha-plugins/tree/master/src/alpha_plugins/baidu_search/README.md) | [中文](https://github.com/coozila/alpha-plugins/tree/master/src/alpha_plugins/baidu_search/README.zh.md)
+Language: [English](https://github.com/coozila/agi-gpt-plugins/tree/master/src/agi-gpt_plugins/baidu_search/README.md) | [中文](https://github.com/coozila/agi-gpt-plugins/tree/master/src/agi-gpt_plugins/baidu_search/README.zh.md)
 
-This search plugin integrates Baidu search engines into alpha, complementing the existing support for Google Search and DuckDuckGo Search provided by the main repository.
+This search plugin integrates Baidu search engines into agi-gpt, complementing the existing support for Google Search and DuckDuckGo Search provided by the main repository.
 
 ## Key Features:
 - Baidu Search: Perform search queries using the Baidu search engine.
@@ -29,4 +29,4 @@ BAIDU_COOKIE=your-baidu-cookie
 Remember to replace `your-baidu-cookie` with the actual cookie content you obtained from the Chrome Developer Tools.
 
 ## Note
-In most cases, the alpha bot's queries are automatically set to English. However, if you wish to search in Chinese, you can specify the language in the goals.
+In most cases, the agi-gpt bot's queries are automatically set to English. However, if you wish to search in Chinese, you can specify the language in the goals.

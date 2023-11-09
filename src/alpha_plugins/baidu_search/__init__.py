@@ -1,8 +1,8 @@
-"""This is the Baidu search engines plugin for alpha."""
+"""This is the Baidu search engines plugin for agi-gpt."""
 import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from alpha_plugin_template import AlphaPluginTemplate
+from agi-gpt_plugin_template import agi-gptPluginTemplate
 
 from .baidu_search import _baidu_search
 
@@ -14,7 +14,7 @@ class Message(TypedDict):
     content: str
 
 
-class AlphaBaiduSearch(AlphaPluginTemplate):
+class agi-gptBaiduSearch(agi-gptPluginTemplate):
     def __init__(self):
         super().__init__()
         self._name = "Baidu-Search-Plugin"

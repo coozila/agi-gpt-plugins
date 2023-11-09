@@ -1,6 +1,6 @@
-## alpha News Search Plugin
+## agi-gpt News Search Plugin
 
-A plugin adding [News API](https://newsapi.org/docs) integration into alpha
+A plugin adding [News API](https://newsapi.org/docs) integration into agi-gpt
 
 ## Features(more coming soon!)
 
@@ -9,7 +9,7 @@ A plugin adding [News API](https://newsapi.org/docs) integration into alpha
 ## Installation
 
 1. Clone this repo as instructed in the main repository
-2. Add this chunk of code along with your News API information to the `.env` file within alpha:
+2. Add this chunk of code along with your News API information to the `.env` file within agi-gpt:
 
 ```
 ################################################################################

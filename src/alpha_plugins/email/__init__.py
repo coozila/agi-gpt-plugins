@@ -1,7 +1,7 @@
-"""This is the email plugin for alpha."""
+"""This is the email plugin for agi-gpt."""
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from alpha_plugin_template import AlphaPluginTemplate
+from agi-gpt_plugin_template import agi-gptPluginTemplate
 from colorama import Fore
 
 PromptGenerator = TypeVar("PromptGenerator")
@@ -12,14 +12,14 @@ class Message(TypedDict):
     content: str
 
 
-class AlphaEmailPlugin(AlphaPluginTemplate):
+class agi-gptEmailPlugin(agi-gptPluginTemplate):
     """
-    This is the alpha email plugin.
+    This is the agi-gpt email plugin.
     """
 
     def __init__(self):
         super().__init__()
-        self._name = "alpha-Email-Plugin"
+        self._name = "agi-gpt-Email-Plugin"
         self._version = "0.2.0"
         self._description = "This plugin reads and send emails."
 

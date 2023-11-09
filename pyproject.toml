@@ -8,7 +8,7 @@ version = "0.0.2"
 authors = [
   { name="coozila", email="support@coozila.com" }, { name="Riensen", email="3340218+riensen@users.noreply.github.com" }
 ]
-description = "The plugins for alpha."
+description = "The plugins for agi-gpt."
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -19,8 +19,8 @@ classifiers = [
 dependencies = ["abstract-singleton"]
 
 [project.urls]
-"Homepage" = "https://github.com/coozila/alpha-plugins"
-"Bug Tracker" = "https://github.com/coozila/alpha-plugins"
+"Homepage" = "https://github.com/coozila/agi-gpt-plugins"
+"Bug Tracker" = "https://github.com/coozila/agi-gpt-plugins"
 
 [tool.black]
 line-length = 88

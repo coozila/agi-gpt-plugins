@@ -1,7 +1,7 @@
 """Random Values commands."""
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from alpha_plugin_template import AlphaPluginTemplate
+from agi-gpt_plugin_template import agi-gptPluginTemplate
 
 from .random_values import (
     _generate_password,
@@ -19,16 +19,16 @@ class Message(TypedDict):
     content: str
 
 
-class AlphaRandomValues(AlphaPluginTemplate):
+class agi-gptRandomValues(agi-gptPluginTemplate):
     """
-    Random Values plugin for alpha.
+    Random Values plugin for agi-gpt.
     """
 
     def __init__(self):
         super().__init__()
-        self._name = "alpha-random-values"
+        self._name = "agi-gpt-random-values"
         self._version = "0.1.0"
-        self._description = "Enable alpha with the power of random values."
+        self._description = "Enable agi-gpt with the power of random values."
 
     def can_handle_on_response(self) -> bool:
         """This method is called to check that the plugin can
