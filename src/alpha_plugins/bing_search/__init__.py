@@ -2,7 +2,7 @@
 import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi_gpt_plugin_template import Agi-GPTPluginTemplate
+from agi_gpt_plugin_template import AGI-GPTPluginTemplate
 
 from .bing_search import _bing_search
 
@@ -14,7 +14,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptBingSearch(Agi-GPTPluginTemplate):
+class agi-gptBingSearch(AGI-GPTPluginTemplate):
     def __init__(self):
         super().__init__()
         self._name = "Bing-Search-Plugin"

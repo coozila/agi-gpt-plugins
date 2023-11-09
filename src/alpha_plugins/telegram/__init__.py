@@ -3,7 +3,7 @@ import os
 import re
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi_gpt_plugin_template import Agi-GPTPluginTemplate
+from agi_gpt_plugin_template import AGI-GPTPluginTemplate
 
 from .telegram_chat import TelegramUtils
 
@@ -20,7 +20,7 @@ def remove_color_codes(s: str) -> str:
     return ansi_escape.sub("", s)
 
 
-class agi-gptTelegram(Agi-GPTPluginTemplate):
+class agi-gptTelegram(AGI-GPTPluginTemplate):
     """
     Telegram controller bot integration using python-telegram-bot.
     """

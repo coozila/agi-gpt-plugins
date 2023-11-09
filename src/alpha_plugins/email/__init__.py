@@ -1,7 +1,7 @@
 """This is the email plugin for agi-gpt."""
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi_gpt_plugin_template import Agi-GPTPluginTemplate
+from agi_gpt_plugin_template import AGI-GPTPluginTemplate
 from colorama import Fore
 
 PromptGenerator = TypeVar("PromptGenerator")
@@ -12,7 +12,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptEmailPlugin(Agi-GPTPluginTemplate):
+class agi-gptEmailPlugin(AGI-GPTPluginTemplate):
     """
     This is the agi-gpt email plugin.
     """

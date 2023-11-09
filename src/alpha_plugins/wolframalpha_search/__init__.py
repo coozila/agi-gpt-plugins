@@ -2,7 +2,7 @@
 import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi_gpt_plugin_template import Agi-GPTPluginTemplate
+from agi_gpt_plugin_template import AGI-GPTPluginTemplate
 from wolframagi-gpt import Client
 
 PromptGenerator = TypeVar("PromptGenerator")
@@ -13,7 +13,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptWolframagi-gptSearch(Agi-GPTPluginTemplate):
+class agi-gptWolframagi-gptSearch(AGI-GPTPluginTemplate):
     """
     Wolframagi-gpt search integrations
     """
