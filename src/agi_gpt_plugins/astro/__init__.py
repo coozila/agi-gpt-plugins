@@ -12,7 +12,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptSpacePlugin(AgiGptPluginTemplate):
+class AgiGptSpacePlugin(AgiGptPluginTemplate):
     """
     This is the agi-gpt space plugin.
     """

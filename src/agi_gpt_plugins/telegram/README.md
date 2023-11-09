@@ -19,7 +19,7 @@ Then set the following variables in your .env:
 TELEGRAM_API_KEY=your-telegram-bot-token
 TELEGRAM_CHAT_ID=your-telegram-bot-chat-id
 
-ALLOWLISTED_PLUGINS=agi-gptTelegram
+ALLOWLISTED_PLUGINS=AgiGptTelegram
 CHAT_MESSAGES_ENABLED=True
 
 ````

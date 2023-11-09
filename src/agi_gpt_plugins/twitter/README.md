@@ -32,7 +32,7 @@ TW_CLIENT_ID_SECRET=
 ### ALLOWLISTED PLUGINS
 ################################################################################
 
-ALLOWLISTED_PLUGINS=agi-gptTwitter
+ALLOWLISTED_PLUGINS=AgiGptTwitter
 
 ```
 

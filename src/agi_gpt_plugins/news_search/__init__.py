@@ -14,7 +14,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptNewsSearch(AgiGptPluginTemplate):
+class AgiGptNewsSearch(AgiGptPluginTemplate):
     def __init__(self):
         super().__init__()
         self._name = "News-Search-Plugin"

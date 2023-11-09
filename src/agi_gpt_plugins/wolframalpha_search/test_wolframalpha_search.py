@@ -3,13 +3,13 @@ import unittest
 
 import requests
 
-from . import agi-gptWolframagi-gptSearch
+from . import AgiGptWolframAgiGptSearch
 
 
-class Testagi-gptWolframagi-gptSearch(unittest.TestCase):
+class TestAgiGptWolframAgiGptSearch(unittest.TestCase):
     def setUp(self):
         os.environ["WOLFRAMagi-gpt_APPID"] = "test_appid"
-        self.plugin = agi-gptWolframagi-gptSearch()
+        self.plugin = AgiGptWolframAgiGptSearch()
 
     def tearDown(self):
         os.environ.pop("WOLFRAMagi-gpt_APPID", None)

@@ -4,15 +4,15 @@ from typing import List
 
 import requests
 
-from . import agi-gptBingSearch
+from . import AgiGptBingSearch
 from .bing_search import _bing_search
 
 
-class Testagi-gptBingSearch(unittest.TestCase):
+class TestAgiGptBingSearch(unittest.TestCase):
     def setUp(self):
         os.environ["BING_API_KEY"] = "test_key"
         os.environ["SEARCH_ENGINE"] = "bing"
-        self.plugin = agi-gptBingSearch()
+        self.plugin = AgiGptBingSearch()
 
     def tearDown(self):
         os.environ.pop("SEARCH_ENGINE", None)
@@ -27,7 +27,7 @@ class Testagi-gptBingSearch(unittest.TestCase):
 
     def test_pre_command(self):
         os.environ["SEARCH_ENGINE"] = "bing"
-        self.plugin = agi-gptBingSearch()
+        self.plugin = AgiGptBingSearch()
 
         command_name, arguments = self.plugin.pre_command(
             "google", {"query": "test query"}

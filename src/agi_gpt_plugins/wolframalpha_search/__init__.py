@@ -13,7 +13,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptWolframagi-gptSearch(AgiGptPluginTemplate):
+class AgiGptWolframAgiGptSearch(AgiGptPluginTemplate):
     """
     Wolframagi-gpt search integrations
     """

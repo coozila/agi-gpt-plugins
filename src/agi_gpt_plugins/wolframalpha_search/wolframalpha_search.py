@@ -1,6 +1,6 @@
-from . import agi-gptWolframagi-gptSearch
+from . import AgiGptWolframAgiGptSearch
 
-plugin = agi-gptWolframagi-gptSearch()
+plugin = AgiGptWolframAgiGptSearch()
 
 
 def _wolframagi-gpt_search(query: str) -> str | list[str]:

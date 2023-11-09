@@ -19,7 +19,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptRandomValues(AgiGptPluginTemplate):
+class AgiGptRandomValues(AgiGptPluginTemplate):
     """
     Random Values plugin for agi-gpt.
     """

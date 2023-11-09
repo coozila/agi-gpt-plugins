@@ -13,7 +13,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptTwitter(AgiGptPluginTemplate):
+class AgiGptTwitter(AgiGptPluginTemplate):
     """
     Twitter API integrations using Tweepy
     """

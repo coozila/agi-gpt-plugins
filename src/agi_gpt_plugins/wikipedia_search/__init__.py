@@ -13,7 +13,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptWikipediaSearch(AgiGptPluginTemplate):
+class AgiGptWikipediaSearch(AgiGptPluginTemplate):
     """
     Wikipedia search integrations
     """

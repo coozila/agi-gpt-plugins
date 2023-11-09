@@ -14,7 +14,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptBaiduSearch(AgiGptPluginTemplate):
+class AgiGptBaiduSearch(AgiGptPluginTemplate):
     def __init__(self):
         super().__init__()
         self._name = "Baidu-Search-Plugin"

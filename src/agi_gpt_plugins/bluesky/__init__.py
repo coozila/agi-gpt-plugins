@@ -11,7 +11,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptBluesky(AgiGptPluginTemplate):
+class AgiGptBluesky(AgiGptPluginTemplate):
     """
     Bluesky plugin for agi-gpt using atprototools.
     """

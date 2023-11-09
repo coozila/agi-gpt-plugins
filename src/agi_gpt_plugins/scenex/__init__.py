@@ -15,7 +15,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptSceneXPlugin(AgiGptPluginTemplate):
+class AgiGptSceneXPlugin(AgiGptPluginTemplate):
     """
     This is the agi-gpt SceneX plugin.
     """

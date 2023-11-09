@@ -12,7 +12,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptEmailPlugin(AgiGptPluginTemplate):
+class AgiGptEmailPlugin(AgiGptPluginTemplate):
     """
     This is the agi-gpt email plugin.
     """

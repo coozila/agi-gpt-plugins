@@ -58,7 +58,7 @@ In your `.env` search for `ALLOWLISTED_PLUGINS` and add this Plugin:
 ################################################################################
 
 #ALLOWLISTED_PLUGINS - Sets the listed plugins that are allowed (Example: plugin1,plugin2,plugin3)
-ALLOWLISTED_PLUGINS=agi-gptSceneXPlugin
+ALLOWLISTED_PLUGINS=AgiGptSceneXPlugin
 ```
 
 ## 🧪 Test the agi-gpt SceneX Plugin
