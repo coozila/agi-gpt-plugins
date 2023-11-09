@@ -2,7 +2,7 @@
 import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi-gpt_plugin_template import agi-gptPluginTemplate
+from agi_gpt_plugin_template import Agi-GPTPluginTemplate
 from colorama import Fore
 
 from .scenex_plugin import SceneXplain
@@ -15,7 +15,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptSceneXPlugin(agi-gptPluginTemplate):
+class agi-gptSceneXPlugin(Agi-GPTPluginTemplate):
     """
     This is the agi-gpt SceneX plugin.
     """

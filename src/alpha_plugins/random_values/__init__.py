@@ -1,7 +1,7 @@
 """Random Values commands."""
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi-gpt_plugin_template import agi-gptPluginTemplate
+from agi_gpt_plugin_template import Agi-GPTPluginTemplate
 
 from .random_values import (
     _generate_password,
@@ -19,7 +19,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptRandomValues(agi-gptPluginTemplate):
+class agi-gptRandomValues(Agi-GPTPluginTemplate):
     """
     Random Values plugin for agi-gpt.
     """

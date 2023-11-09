@@ -2,7 +2,7 @@
 import os
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi-gpt_plugin_template import agi-gptPluginTemplate
+from agi_gpt_plugin_template import Agi-GPTPluginTemplate
 
 from .baidu_search import _baidu_search
 
@@ -14,7 +14,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptBaiduSearch(agi-gptPluginTemplate):
+class agi-gptBaiduSearch(Agi-GPTPluginTemplate):
     def __init__(self):
         super().__init__()
         self._name = "Baidu-Search-Plugin"

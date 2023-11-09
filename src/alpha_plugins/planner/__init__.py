@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi-gpt_plugin_template import agi-gptPluginTemplate
+from agi_gpt_plugin_template import Agi-GPTPluginTemplate
 
 from .planner import (
     check_plan,
@@ -26,7 +26,7 @@ class Message(TypedDict):
     content: str
 
 
-class PlannerPlugin(agi-gptPluginTemplate):
+class PlannerPlugin(Agi-GPTPluginTemplate):
     """
     This is a task planner system plugin for agi-gpt which 
     adds the task planning commands to the prompt.

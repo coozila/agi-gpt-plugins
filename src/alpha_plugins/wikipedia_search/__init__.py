@@ -1,7 +1,7 @@
 """Wikipedia search integrations."""
 from typing import Any, Dict, List, Optional, Tuple, TypedDict, TypeVar
 
-from agi-gpt_plugin_template import agi-gptPluginTemplate
+from agi_gpt_plugin_template import Agi-GPTPluginTemplate
 
 from .wikipedia_search import _wikipedia_search
 
@@ -13,7 +13,7 @@ class Message(TypedDict):
     content: str
 
 
-class agi-gptWikipediaSearch(agi-gptPluginTemplate):
+class agi-gptWikipediaSearch(Agi-GPTPluginTemplate):
     """
     Wikipedia search integrations
     """
