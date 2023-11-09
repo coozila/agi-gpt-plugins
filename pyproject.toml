@@ -3,10 +3,10 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "agpt_plugins"
+name = "agi_gpt_plugins"
 version = "0.0.2"
 authors = [
-  { name="coozila", email="support@coozila.com" }, { name="Riensen", email="3340218+riensen@users.noreply.github.com" }
+  { name="olariuromeo", email="olariu_romeo@yahoo.it" }, { name="olariuromeo", email="2572824+olariuromeo@users.noreply.github.com" }
 ]
 description = "The plugins for agi-gpt."
 readme = "README.md"
